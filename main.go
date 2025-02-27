@@ -1,8 +1,14 @@
 package main
 
-import "github.com/yourusername/snippet-manager/config"
+import (
+	"github.com/yourusername/snippet-manager/config"
+	"github.com/yourusername/snippet-manager/routes"
+)
 
 func main() {
 	config.ConnectDatabase()
 	config.MigrateDatabase()
+
+	server := routes.RegisterRoutes()
+	server.Run(":3001")
 }
