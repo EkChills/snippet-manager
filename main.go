@@ -10,5 +10,5 @@ func main() {
 	config.MigrateDatabase()
 
 	server := routes.RegisterRoutes()
-	server.Run(":3001")
+	server.Run("0.0.0.0:8080")
 }
